@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-class LoginWindow(QDialog):
+class LoginWindow(QWidget):
 
     def __init__(self):
         super().__init__()
@@ -18,11 +18,8 @@ class LoginWindow(QDialog):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        self.createGridLayout()
-
-        windowLayout = QVBoxLayout()
-        windowLayout.addWidget(self.grid)
-        self.setLayout(windowLayout)
+        layout = self.createGridLayout()
+        self.setLayout(layout)
 
         self.show()
 
@@ -46,7 +43,7 @@ class LoginWindow(QDialog):
         layout.addWidget(btnLogin, 2, 0) 
         layout.addWidget(QLabel(" ", self), 3, 0)
 
-        self.grid.setLayout(layout)
+        return layout
         
 
     @pyqtSlot()
