@@ -3,8 +3,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from utilities import Utility
-from weather_layout import WeatherUI
 from weather_condition_layout import WeatherConditionUI
+from news_layout import NewsUI
 
 class HomeScreen(QDialog):
 
@@ -26,7 +26,11 @@ class HomeScreen(QDialog):
         weather = WeatherConditionUI()
         self.weather_layout = weather.getLayout()
 
+        news = NewsUI()
+        self.news_layout = news.getLayout()
+        
         self.layout.addLayout(self.weather_layout, 0, 0)
+        self.layout.addLayout(self.news_layout, 1, 0)
 
         self.setLayout(self.layout)
         self.show()
