@@ -88,7 +88,8 @@ class MusicUI(QWidget):
         self.song_file = QFile()
         self.song_file.setFileName(self.files[self.cur_song])
         self.song_file.open(QIODevice.ReadOnly)
-        self.data = self.song_file.readAll()
+        self.data.clear()
+        self.data.append(self.song_file.readAll())
         return self.data
 
     def nextSong(self):
