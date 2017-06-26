@@ -36,6 +36,12 @@ class WeatherConditionUI(QWidget):
         weather_image = QLabel(self)
         weather_image.setPixmap(pixmap)
 
+        self.weather_layout2 = QVBoxLayout()
+        weather_header = QLabel("Weather: ", self)
+        weather_header.setFont(QFont("Times", 20, weight=QFont.Bold))
+
+        self.weather_layout2.addWidget(weather_header)
+
         self.weather_layout = QHBoxLayout()
 
         layout1 = QVBoxLayout()
@@ -55,9 +61,11 @@ class WeatherConditionUI(QWidget):
         self.weather_layout.addLayout(layout1)
         self.weather_layout.addLayout(layout2)
 
+        self.weather_layout2.addLayout(self.weather_layout)
+
 
     def getLayout(self):
-        return self.weather_layout
+        return self.weather_layout2
 
     def getData(self):
         locs = Utility.getLocation()

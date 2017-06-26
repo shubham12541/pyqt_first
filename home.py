@@ -5,6 +5,7 @@ from PyQt5.QtGui import *
 from utilities import Utility
 from weather_condition_layout import WeatherConditionUI
 from news_layout import NewsUI
+from calender_layout import CalenderUI
 
 class HomeScreen(QDialog):
 
@@ -28,9 +29,14 @@ class HomeScreen(QDialog):
 
         news = NewsUI()
         self.news_layout = news.getLayout()
+
+        calender = CalenderUI()
+        self.calender_layout = calender.getLayout()
         
+
         self.layout.addLayout(self.weather_layout, 0, 0)
         self.layout.addLayout(self.news_layout, 1, 0)
+        self.layout.addLayout(self.calender_layout, 0, 1)
 
         self.setLayout(self.layout)
         self.show()
