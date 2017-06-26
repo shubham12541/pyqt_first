@@ -6,6 +6,8 @@ from PyQt5.QtCore import *
 import urllib3
 import json
 
+""" TODO: Refresh data every hour"""
+
 class WeatherConditionUI(QWidget):
 
     def __init__(self):

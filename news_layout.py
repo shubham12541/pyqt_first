@@ -6,6 +6,7 @@ from PyQt5.QtCore import *
 import urllib3
 import json
 
+""" TODO: refresh every hour"""
 
 class NewsUI(QWidget):
 

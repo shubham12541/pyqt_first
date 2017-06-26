@@ -16,6 +16,8 @@ from oauth2client.file import Storage
 
 import datetime
 
+""" TODO: refresh every hour"""
+
 
 class CalenderUI(QWidget):
 
